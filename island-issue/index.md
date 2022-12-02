@@ -51,25 +51,26 @@ func travel(root treeNode){
 ```go
 func travel(grid [][]byte, row, col int){
 
- // 判断叶子节点
- if offGrid(){
-  return 
- }
- // 访问相邻节点
- travel(grid, r + 1, c)
- travel(grid, r - 1, c)
- travel(grid, r, c - 1)
- travel(grid, r, c - 1)
+    // 判断叶子节点
+    if offGrid(){
+    return 
+    }
+
+    // 访问相邻节点
+    travel(grid, r + 1, c)
+    travel(grid, r - 1, c)
+    travel(grid, r, c - 1)
+    travel(grid, r, c - 1)
  
 }
 
 // 两种判断方式，一个是判断是否在范围内（isInArea），一个是判断是否越级(offGrid)
 func offGrid(grid [][]byte, row, col int){
- return row >= len(grid) || col >= len(grid) || row < 0 || col < 0
+    return row >= len(grid) || col >= len(grid) || row < 0 || col < 0
 }
 
 func isInArea(grid [][]byte, row, col int){
- return row < len(grid) && col >= len(grid) && row <= 0 && col <= 0
+    return row < len(grid) && col >= len(grid) && row <= 0 && col <= 0
 }
 
 ```
